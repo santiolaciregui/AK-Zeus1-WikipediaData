@@ -9,7 +9,7 @@ internal class WikipediaInfoServiceImpl(
     private val wikipediaToResolver: WikipediaToResolver
 ): WikipediaService {
 
-    override fun getArticle(artist: String): Article {
+    override fun getArticle(artist: String): Article? {
         val callResponse = getResponseFromService(artist)
         return wikipediaToResolver.getInfoFromExternalData(callResponse.body())
     }

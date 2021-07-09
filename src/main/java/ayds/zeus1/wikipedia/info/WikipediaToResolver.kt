@@ -11,18 +11,23 @@ private const val QUERY_JSON = "query"
 private const val WIKIPEDIA_SHORT_URL = "https://en.wikipedia.org/?curid="
 
 interface WikipediaToResolver {
-    fun getInfoFromExternalData(body: String?): Article
+    fun getInfoFromExternalData(body: String?): Article?
 }
 
 internal class JsonToInfoResolver : WikipediaToResolver {
-    override fun getInfoFromExternalData(serviceData: String?): Article =
-            serviceData.getFirstItem().getInfoJson().let{ item->
+    override fun getInfoFromExternalData(serviceData: String?): Article? =
+        try {
+            serviceData.getFirstItem().getInfoJson().let { item ->
                 Article(
                     description = item.getArtistSnippet(),
                     infoUrl = item.getArtistUrl(),
                     sourceLogoUrl = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Wikipedia-logo-v2-es.png"
                 )
             }
+        }
+        catch(e: Exception){
+            null
+        }
 
     private fun String?.getFirstItem(): JsonObject =
         Gson().fromJson(this, JsonObject::class.java)
