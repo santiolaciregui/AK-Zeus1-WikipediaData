@@ -1,6 +1,6 @@
 package ayds.zeus1.wikipedia
 
-import ayds.zeus.songinfo.moredetails.model.entities.Article
+import ayds.zeus1.wikipedia.entities.Article
 import retrofit2.http.Query
 
 interface WikipediaService {

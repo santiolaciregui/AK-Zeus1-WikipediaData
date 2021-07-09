@@ -1,4 +1,4 @@
-package ayds.zeus.songinfo.moredetails.model.entities
+package ayds.zeus1.wikipedia.entities
 
 data class Article (
     val description: String,

@@ -1,7 +1,7 @@
 package ayds.zeus1.wikipedia.info
 
-import ayds.zeus.songinfo.moredetails.model.entities.Article
 import ayds.zeus1.wikipedia.WikipediaService
+import ayds.zeus1.wikipedia.entities.Article
 import retrofit2.Response
 
 internal class WikipediaInfoServiceImpl(

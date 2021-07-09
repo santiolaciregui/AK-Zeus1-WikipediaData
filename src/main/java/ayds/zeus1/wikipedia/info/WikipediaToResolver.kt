@@ -1,6 +1,6 @@
 package ayds.zeus1.wikipedia.info
 
-import ayds.zeus.songinfo.moredetails.model.entities.Article
+import ayds.zeus1.wikipedia.entities.Article
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 
